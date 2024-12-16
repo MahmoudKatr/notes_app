@@ -18,10 +18,7 @@ class NotesView extends StatelessWidget {
               ),
               context: context,
               builder: (context) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 40, horizontal: 8),
-                  child: AddNoteBottomSheet(),
-                );
+                return const AddNoteBottomSheet();
               });
         },
         shape: const CircleBorder(), // Enforce circular shape
