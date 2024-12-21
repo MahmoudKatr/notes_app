@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/widgets/custom_app_bar.dart';
 import 'package:notes_app/views/widgets/custom_text_field.dart';
 
-class EditNoteBody extends StatelessWidget {
+class EditNoteBody extends StatefulWidget {
   const EditNoteBody({super.key, required this.note});
   final NoteModel note;
+
+  @override
+  State<EditNoteBody> createState() => _EditNoteBodyState();
+}
+
+class _EditNoteBodyState extends State<EditNoteBody> {
+  String? title, content;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,15 +25,34 @@ class EditNoteBody extends StatelessWidget {
           const SizedBox(
             height: 45,
           ),
-          CustomAppBar(onPressed: () {}, hint: "Edit Note", icon: Icons.check),
+          CustomAppBar(
+              onPressed: () {
+                widget.note.title = title ?? widget.note.title;
+                widget.note.subTitle = content ?? widget.note.subTitle;
+                widget.note.save(); // Save the changes
+                BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                Navigator.pop(context); // Close the edit view
+              },
+              hint: "Edit Note",
+              icon: Icons.check),
           const SizedBox(
             height: 50,
           ),
-          const CustomTextField(hintText: "Title"),
+          CustomTextField(
+            onChange: (value) {
+              title = value;
+            },
+            hintText: widget.note.title,
+          ),
           const SizedBox(
             height: 16,
           ),
-          const CustomTextField(hintText: "Content", maxLines: 5),
+          CustomTextField(
+              onChange: (value) {
+                content = value;
+              },
+              hintText: widget.note.subTitle,
+              maxLines: 5),
         ],
       ),
     );
