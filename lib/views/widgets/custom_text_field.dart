@@ -7,8 +7,10 @@ class CustomTextField extends StatelessWidget {
       required this.hintText,
       this.maxLines = 1,
       this.onSaved,
-      this.onChange});
+      this.onChange,
+      this.controller});
   final String hintText;
+  final TextEditingController? controller;
   final int maxLines;
   final void Function(String?)? onSaved;
   final void Function(String)? onChange;
@@ -17,6 +19,7 @@ class CustomTextField extends StatelessWidget {
     return Column(
       children: [
         TextFormField(
+          controller: controller,
           onChanged: onChange,
           onSaved: onSaved,
           validator: (value) {
