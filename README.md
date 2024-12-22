@@ -17,34 +17,33 @@ The project follows a modular structure for maintainability and scalability:
 ```
 lib/
 ├── cubits/                        # State management using Cubit
-│   ├── add_note_cubit/
-│   │   ├── add_note_cubit.dart    # Handles adding new notes
-│   │   └── add_note_state.dart    # States for the add note feature
-│   └── notes_cubit/
-│       ├── notes_cubit.dart       # Handles overall notes state
-│       └── notes_state.dart       # States for managing notes
+│   └── notes_cubit/               # Handles overall notes state
+│       ├── notes_cubit.dart
+│       └── notes_state.dart
 ├── models/                        # Data models
-│   ├── note_model.dart            # Data structure for a note
-│   └── note_model.g.dart          # Generated code for JSON serialization/deserialization
+│   ├── note_model.dart
+│   └── note_model.g.dart
 ├── views/                         # UI components
 │   ├── widgets/                   # Reusable UI components
-│   │   ├── add_note_button_sheet.dart # Bottom sheet for adding a new note
-│   │   ├── add_note_form.dart     # Form for inputting note details
-│   │   ├── colors_list_view.dart  # Widget for selecting note colors
-│   │   ├── custom_app_bar.dart    # Custom app bar widget
-│   │   ├── custom_bottom.dart     # Custom bottom bar for the app
-│   │   ├── custom_formate_date.dart # Utility to format dates
-│   │   ├── custom_search_icon.dart # Search icon with functionality
-│   │   ├── custom_text_field.dart # Custom text input field
-│   │   ├── edit_note_body.dart    # Body content for editing a note
-│   │   ├── note_item.dart         # Widget displaying a single note
-│   │   ├── note_view_body.dart    # Body content of the main notes view
-│   │   └── notes_list_view.dart   # Widget displaying a list of notes
-│   ├── edit_note_view.dart        # Screen for editing a note
-│   └── notes_view.dart            # Main screen displaying the list of notes
-├── constants.dart                 # Global constants for the app
-├── main.dart                      # Entry point of the application
-├── simple_bloc_observer.dart      # Bloc observer for debugging state changes
+│   │   ├── add_note_button_sheet.dart
+│   │   ├── add_note_form.dart
+│   │   ├── colors_list_view.dart
+│   │   ├── custom_app_bar.dart
+│   │   ├── custom_bottom.dart
+│   │   ├── custom_formate_date.dart
+│   │   ├── custom_search_icon.dart
+│   │   ├── custom_text_field.dart
+│   │   ├── edit_note_body.dart
+│   │   ├── note_item.dart
+│   │   ├── note_search_view.dart
+│   │   ├── note_view_body.dart
+│   │   ├── notes_list_view.dart
+│   │   └── search_note_body.dart
+│   ├── edit_note_view.dart
+│   ├── notes_view.dart
+│   └── search_note_view.dart
+├── constants.dart
+├── main.dart
 ```
 
 ### Detailed Explanation
@@ -61,11 +60,13 @@ lib/
 #### Views
 - **Main View (`notes_view.dart`)**: Displays a list of all notes and provides navigation options.
 - **Edit View (`edit_note_view.dart`)**: Allows users to edit the details of an existing note.
+- **Search View (`search_note_view.dart`)**: Provides functionality for searching through notes.
 
 #### Widgets
 - **Reusable Widgets**: Modular components like `add_note_form`, `colors_list_view`, and `custom_text_field` ensure consistency and reduce code duplication.
 - **Custom App Bar**: Provides a unique, application-specific app bar.
 - **Bottom Sheet**: Implements a slide-up interface for adding new notes.
+- **Search Widgets**: Widgets like `note_search_view` and `search_note_body` enhance the search functionality.
 
 ## Getting Started
 
