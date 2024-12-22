@@ -95,7 +95,7 @@ Ensure you have the following installed:
 
 ## Screenshots
 
-*(Add screenshots or GIFs of the application here to showcase its features.)*
+*(Loading.........)*
 
 ## Contributing
 
