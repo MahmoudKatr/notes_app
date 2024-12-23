@@ -96,7 +96,19 @@ Ensure you have the following installed:
 
 ## Screenshots
 
-*(Loading.........)*
+Here are some screenshots of the Notes App:
+
+### Home Screen
+![Home Screen](screenshots/home_screen.png)
+
+### Add Note
+![Add Note Screen](screenshots/add_note.png)
+
+### Edit Note
+![Edit Note Screen](screenshots/edit_note.png)
+
+### Search Notes
+![Search Notes Screen](screenshots/search_notes.png)
 
 ## Contributing
 

@@ -37,7 +37,7 @@ class NoteItem extends StatelessWidget {
                 child: Text(
                   note.subTitle,
                   style: const TextStyle(
-                      color: Color.fromARGB(255, 122, 117, 117), fontSize: 18),
+                      color: Color.fromARGB(255, 33, 32, 32), fontSize: 18),
                 ),
               ),
               trailing: IconButton(
@@ -56,7 +56,7 @@ class NoteItem extends StatelessWidget {
               child: Text(
                 formatDate(note.date),
                 style: const TextStyle(
-                    color: Color.fromARGB(255, 122, 117, 117), fontSize: 16),
+                    color: Color.fromARGB(255, 80, 77, 77), fontSize: 16),
               ),
             ),
           ],
